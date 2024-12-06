@@ -21,7 +21,6 @@ const LoadItems = () => {
         setIsLoading(false);
       });
   }, []);
-
   return (
     <>
       {isLoading && (
@@ -48,5 +47,4 @@ const LoadItems = () => {
     </>
   );
 };
-
 export default LoadItems;

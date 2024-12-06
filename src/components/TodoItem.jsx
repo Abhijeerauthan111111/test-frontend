@@ -4,12 +4,6 @@ import {useContext, useState} from "react";
 
 const TodoItem = ({ id, todoText, todoDate, completed, createdate}) => {
 
-  // const formatteddate = new Date(todoDate).toLocaleDateString('en-IN',{
-  //   year: "numeric",
-  //   month: "long",
-  //   day: "numeric"
-  // })
-
   function formatdate(date){
     const formatteddate = new Date(date).toLocaleDateString('en-IN',{
       year: "numeric",
@@ -20,9 +14,7 @@ const TodoItem = ({ id, todoText, todoDate, completed, createdate}) => {
     }
 
   const {deleteTodoItem} = useContext(TodoItemsContext);
-  
   const [iscomplete, setiscomplete] = useState(completed)
-
   const toggle = ()=>{
     fetch(`https://roomrental-backend.azurewebsites.net/todos/${id}`, {
       method: 'PATCH',
@@ -107,5 +99,4 @@ const TodoItem = ({ id, todoText, todoDate, completed, createdate}) => {
     </div>
   );
 };
-
 export default TodoItem;

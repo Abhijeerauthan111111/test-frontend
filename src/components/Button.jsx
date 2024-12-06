@@ -1,6 +1,5 @@
 const Button = ({btnType, btnText, handler}) => {
   const baseClasses = "px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg text-sm";
-  
   if (btnType === 'success') {
     return (
       <button 
@@ -20,7 +19,6 @@ const Button = ({btnType, btnText, handler}) => {
       </button>
     );
   }
-  
   return (
     <button 
       className={`${baseClasses} bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600`}
@@ -30,5 +28,4 @@ const Button = ({btnType, btnText, handler}) => {
     </button>
   );
 };
-
 export default Button;

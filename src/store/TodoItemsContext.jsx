@@ -4,9 +4,7 @@ import TodoItemsReducer from "./TodoItemsReducer";
 export const TodoItemsContext = createContext();
 
 export const TodoItemsProvider = ({children}) => {
-
   const [todoItems, dispatch] = useReducer(TodoItemsReducer, []);
-
   const addTodoItem = (id, todoText, todoDate) => {
     dispatch({
       type: 'ADD_ITEM',
@@ -15,7 +13,6 @@ export const TodoItemsProvider = ({children}) => {
       }
     })
   }
-
   const deleteTodoItem = (todoId) => {
     dispatch({
       type: 'DELETE_ITEM',
@@ -24,7 +21,6 @@ export const TodoItemsProvider = ({children}) => {
       }
     })
   }
-
   const addAllTodoItems = (todoItems) => {
     dispatch({
       type: 'LOAD_ALL_ITEMS',
