@@ -61,6 +61,7 @@ const TodoItem = ({ id, todoText, todoDate, completed, createdate}) => {
 
   return (
     <div className="max-w-3xl mx-auto px-4 mb-3 group">
+      <span className="text-xs text-gray-500">Created: {formatdate(createdate)}</span>
       <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300">
         <div className="p-4 flex items-center gap-4">
 
@@ -91,7 +92,7 @@ const TodoItem = ({ id, todoText, todoDate, completed, createdate}) => {
               <span className="text-xs text-gray-500"> : {formatdate(todoDate)}</span>
               </div>
             
-             <span className="text-xs text-gray-500">Created: {formatdate(createdate)}</span>
+             
              </div>
             </div>
           </div>
@@ -99,10 +100,11 @@ const TodoItem = ({ id, todoText, todoDate, completed, createdate}) => {
           {/* Delete Button */}
           <button
             onClick={() => deleteHandler()}
-            className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-3 py-1 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-500 text-sm font-medium"
+            className=" transition-opacity duration-300 px-3 py-1 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-500 text-sm font-medium"
           >
             Delete
           </button>
+          
         </div>
       </div>
     </div>
